@@ -1,0 +1,8 @@
+docker version
+  Retorna a versão do Docker, como também outras informações
+  É útil para saber se ele está funcionando e se ele é um
+  docker client ou server
+
+docker info
+  Retorna quantos containers você tem e informações sobre eles,
+  como também informações sobre suas imagens, plugins e afins
