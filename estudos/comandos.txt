@@ -17,6 +17,8 @@ docker --help
 
 
 
+
+
 docker container run -p 8080:80 nginx
   Roda o container docker "nginx" na porta 8080 em primeiro plano
 
@@ -29,14 +31,23 @@ docker container run -P nginx
   Roda o container docker "nginx" numa porta randômica
 
 
+docker container run -d -p 80:80 --name AlgumNomeParaContainer nginx
+  Você pode dar nomes a containers e, assim, consegue selecionar
+  containers diretamente pelo nome, sem ter que usar o ID
 
 
-docker container stop <ID do Container>
+
+
+
+
+docker container stop <ID do Container || Nome do Container>
   Para a execução do container
 
 
-docker container start <ID do Container>
+docker container start <ID do Container || Nome do Container>
   Volta para execução um container que foi parado
+
+
 
 
 
@@ -56,17 +67,52 @@ docker container ls -a -q
 
 
 
-docker container rm <ID do Container>
+
+
+docker container rm <ID do Container || Nome do Container>
   Exclui um container que não está em execução
   Para excluir containers em execução, é preciso pará-los primeiro
   Você pode excluir vários containers de uma vez passando-os
   em sequência
 
 
-docker container rm -f <ID do Container>
+docker container rm -f <ID do Container || Nome do Container>
   Força a remoção de um container, mesmo que esteja em execução
 
 
 docker container rm -f $(docker container ls -a -q)
   Exclui todos os containers de uma vez só, tanto os que estão
   em funcionamento quanto os que estão parados
+
+
+
+
+
+
+docker container logs <ID do Container || Nome do Container>
+  Exibe as mensagens de log de determinado container
+  Se você nunca acessou o container, ele não retornará logs
+
+
+docker container top <ID do Container || Nome do Container>
+  Mostra quais processos (PID) o container está executando
+  no sistema operativo
+
+
+docker container inspect <ID do Container || Nome do Container>
+  Retorna informações detalhadas sobre quais redes estão sendo
+  utilizadas por determinado container
+
+
+
+
+
+
+docker container stats
+  Exibe como está o uso de recursos do computador em relação
+  a todos os containers
+
+
+docker container stats <ID do Container || Nome do Container>
+  Exibe o uso de recursos do computador em relação ao container
+  passado como argumento
