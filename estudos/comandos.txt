@@ -3,6 +3,70 @@ docker version
   É útil para saber se ele está funcionando e se ele é um
   docker client ou server
 
+
 docker info
   Retorna quantos containers você tem e informações sobre eles,
   como também informações sobre suas imagens, plugins e afins
+
+
+docker --help
+  Retorna informações sobre todos os comandos do Docker
+  Pode ser executado dentro de comandos para exibir informações
+  sobre sub-comandos
+
+
+
+
+docker container run -p 8080:80 nginx
+  Roda o container docker "nginx" na porta 8080 em primeiro plano
+
+
+docker container run -d -p 8080:80 nginx
+  Roda o container docker "nginx" na porta 8080 em segundo plano
+
+
+docker container run -P nginx
+  Roda o container docker "nginx" numa porta randômica
+
+
+
+
+docker container stop <ID do Container>
+  Para a execução do container
+
+
+docker container start <ID do Container>
+  Volta para execução um container que foi parado
+
+
+
+
+docker container ls
+  Lista todos os containers que estão em funcionamento
+
+
+docker container ls -a
+  Lista todos os containers, tanto os em funcionamento
+  quanto os que estão parados
+
+
+docker container ls -a -q
+  Retorna "apenas o ID" de todos os containers
+
+
+
+
+docker container rm <ID do Container>
+  Exclui um container que não está em execução
+  Para excluir containers em execução, é preciso pará-los primeiro
+  Você pode excluir vários containers de uma vez passando-os
+  em sequência
+
+
+docker container rm -f <ID do Container>
+  Força a remoção de um container, mesmo que esteja em execução
+
+
+docker container rm -f $(docker container ls -a -q)
+  Exclui todos os containers de uma vez só, tanto os que estão
+  em funcionamento quanto os que estão parados
