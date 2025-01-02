@@ -1,0 +1,85 @@
+Docker:
+  É uma plataforma para a criação e gestão de containers.
+
+
+
+
+
+
+Container:
+  São unidades de software virtualizadas/isoladas que
+  empacotam uma aplicação e todas as dependências
+  necessárias para que essa aplicação funcione
+
+  Apesar de serem virtualizadas, usam o kernel do SO
+  host para funcionarem, como também o hardware nativo
+  da máquina host. Isso significa que são mais leves
+  e performáticos que VMs, mas garantem menos isolação
+
+  Já que utilizam o kernel do SO para funcionarem, isso
+  também significa que um container criado em um SO Windows
+  não funcionará em um SO Linux e vice-versa
+
+  Contudo, é possível que containers Linux funcionem em
+  qualquer plataforma, contanto que você utilize ferramentas
+  como o WSL. Outra alternativa, no caso de Linux para Windows,
+  é utilizar o Hyper-V para executar o container
+
+  Também compartilham recursos de memória, CPU e afins
+  com o SO, e a quantidade de recursos limite a serem
+  utilizados por um container pode ser configurada
+
+
+
+
+
+
+Vantagens do Uso de Containers:
+  Alta portabilidade, pois um container pode funcionar
+  em qualquer lugar e qualquer ambiente, contanto que ele seja 
+  compatível com o kernel do sistema e que haja recursos computacionais
+  suficientes para executá-lo. Isso ocorre porque ele empacota
+  a aplicação com tudo que é necessário para executá-la, e
+  também porque devido ao isolamento, o container não conflita
+  com a maior parte de coisas que poderiam invalidar o container
+
+  Isolamento, o que permite executar vários containers do mesmo
+  software com as mesmas dependências em diferentes versões, sem
+  que conflitem
+
+  Leveza e eficiência, pois não necessitam de uma instância de máquina
+  inteira, mas sim apenas da instância de um pacote de aplicação
+
+  Escabalidade, pois o container pode escalar de acordo com
+  as necessidades
+
+  Auxilia a "unificação" de ambientes de desenvolvimento, de forma que
+  seja possível simular o ambiente de produção no ambiente de
+  desenvolvimento, de modo que o mesmo container que está funcionando
+  no ambiente de desenvolvimento funcione exatamente igual no ambiente
+  de produção, eliminando possíveis erros devido a diferenças entre
+  ambientes
+
+
+
+
+
+
+Desvantagens do Uso de Containers:
+  Containers adicionam complexidade
+
+  Apesar de não fornecer um overhead igual o de uma VM, containers
+  também causam overhead e diminuem o desempenho de tarefas
+
+  Se um container possui falhas de segurança, já que todos compartilham
+  do mesmo kernel, todos os containers estarão sujeitos a essa falha
+  de segurança
+
+
+
+
+
+
+Imagem:
+
+

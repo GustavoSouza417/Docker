@@ -1,0 +1,75 @@
+Em Docker, existem três principais tipos de rede:
+  None;
+  Host;
+  Bridge.
+
+Esses tipos de rede são utilizadas para configurar
+a conectividade entre containers
+
+Cada container recebe um tipo de rede e interage
+de acordo com o mesmo
+
+
+
+
+
+
+None:
+  Neste tipo de rede, o container só tem acesso
+  a seu localhost e a mais nenhuma outra rede
+
+  Em outras palavras, ele não consegue se conectar
+  com nenhum outro container, e pode apenas se
+  comunicar com si mesmo
+
+  Você pode ter quantos containers quiser em modo None
+
+
+
+
+
+
+Host:
+  Neste tipo de rede, o container recebe o mesmo
+  IP de seu host
+
+  Isso significa que todo serviço que o container
+  pode acessar ou possui também é acessível no host
+
+  Isso também significa que eles compartilham seu
+  range de portas, então se uma porta 8080 é aberta
+  pelo host, o container não poderá utilizá-la e
+  vice-versa, pois ambos estão compartilhando portas
+  e IP
+
+  Você pode ter mais de um container em modo host,
+  mas eles não podem executar na mesma porta, já
+  que todos os containers e o host compartilharão
+  do mesmo range de IP e portas
+
+
+
+
+
+
+Bridge:
+  Neste tipo de rede, ocorre um NAT entre o host
+  e seus containers, de forma que cada container
+  tenha um IP privado
+
+  Isso significa que os containers e o host funcionarão
+  em ranges diferentes de IP, então cada container e
+  o próprio host não precisam compartilhar suas portas
+
+  Esse tipo de rede é mais lento, já que utiliza o NAT
+  entre os containers e o host
+
+  O Docker configura automaticamente os ranges de IP
+  dos containers, mas se você quiser, você pode configurá-los
+  por conta, também
+
+  Você pode ter quantos containers quiser em bridge
+
+  Por fim, a Bridge é o tipo de rede padrão do Docker,
+  então se você não especificar o tipo de rede em um
+  container, será instanciada uma rede Bridge
