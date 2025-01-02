@@ -81,5 +81,48 @@ Desvantagens do Uso de Containers:
 
 
 Imagem:
+  É o modelo para a criação de um container
+
+  É criado em um arquivo chamado de Dockerfile, que é um arquivo
+  de texto que define como se constrói imagens Docker
+
+  Esse arquivo empacota um sistema de arquivos com a aplicação
+  e todas as suas dependências
+
+  Após criar um Dockerfile, você deve fazer um build nele para
+  que ele gere uma imagem a partir do Dockerfile
+  
+  Após gerar a imagem, você já pode utilizá-la para criar containers  
+
+  Você pode criar suas próprias imagens ou baixar imagens
+  prontas no Docker Hub
+
+
+
+
+
+
+Docker Engine:
+  É o mecanismo que permite a execução de containers, o qual é
+  dividido em duas partes, chamadas de Docker Daemon e Docker CLI
+
+  O Docker Daemon é um processo em segundo plano que gerencia
+  containers, imagens e afins
+
+  O Docker CLI é a interface de comando na qual ocorre a interação
+  com o Docker
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
