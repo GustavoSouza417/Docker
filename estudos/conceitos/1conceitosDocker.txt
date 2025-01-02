@@ -102,6 +102,22 @@ Imagem:
 
 
 
+Docker Hub:
+  Repositório público, em formato web, onde usuários podem 
+  fazer upload de suas próprias imagens Docker ou download
+  de imagens já prontas
+
+  Link do repositório:
+  https://hub.docker.com/
+
+  O Docker Desktop possui integração com o Docker Hub, então
+  você pode acessar esse repositório web por ele também
+
+
+
+
+
+
 Docker Engine:
   É o mecanismo que permite a execução de containers, o qual é
   dividido em duas partes, chamadas de Docker Daemon e Docker CLI
