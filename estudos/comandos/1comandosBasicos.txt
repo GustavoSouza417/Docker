@@ -103,6 +103,14 @@ docker container rm -f $(docker container ls -a -q)
   em funcionamento quanto os que estão parados
 
 
+docker network rm <ID da Rede || Nome da Rede>
+  Exclui uma rede
+
+
+docker network prune
+  Apaga todas as redes que não estão em modo de execução
+
+
 
 
 
@@ -117,9 +125,16 @@ docker container top <ID do Container || Nome do Container>
   no sistema operativo
 
 
+
+
+
+
 docker container inspect <ID do Container || Nome do Container>
   Retorna informações detalhadas sobre quais redes estão sendo
   utilizadas por determinado container
+
+docker network inspect <ID da Rede || Nome da Rede>
+  Retorna informações detalhadas sobre uma determinada rede
 
 
 
@@ -134,3 +149,21 @@ docker container stats
 docker container stats <ID do Container || Nome do Container>
   Exibe o uso de recursos do computador em relação ao container
   passado como argumento
+
+
+
+
+
+
+docker network create <Nome da Rede>
+  Cria uma rede customizada. Por padrão, ela vem configurada
+  como bridge
+
+
+docker network create <Nome da Rede> --subnet <Subnet (exemplo: 192.150.10.0/24)>
+  Cria uma rede customizada em determinado range de IP
+
+
+docker network create <Nome da Rede) --subnet <Subnet> --gateway <IP do gateway>
+  Cria uma rede customizada em determinado range de IP e define
+  o IP do gateway dela
