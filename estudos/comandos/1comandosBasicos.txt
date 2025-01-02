@@ -20,7 +20,14 @@ docker --help
 
 
 docker container run -p 8080:80 nginx
-  Roda o container docker "nginx" na porta 8080 em primeiro plano
+  Roda o container docker "nginx"
+  O comando "run" serve para criar containers e iniciá-los após sua criação
+  O host acessará o serviço por sua porta 8080 (poderia ser qualquer outra porta vazia)
+  O nginx executará na porta 80 por padrão, então ali deve ser 80
+  No caso, a porta 8080 do host está sendo mapeada para a porta 80 do nginx
+  Então, toda vez que o host acessar a sua porta 8080, ele será redirecionado para
+  A porta 80 do nginx
+  Se você quiser que o nginx execute em outra porta, você precisa reconfigurá-lo
 
 
 docker container run -d -p 8080:80 nginx
@@ -45,7 +52,7 @@ docker container stop <ID do Container || Nome do Container>
 
 
 docker container start <ID do Container || Nome do Container>
-  Volta para execução um container que foi parado
+  Executa um container que já foi criado e está parado
 
 
 
