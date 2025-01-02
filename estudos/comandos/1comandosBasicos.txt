@@ -43,6 +43,13 @@ docker container run -d -p 80:80 --name AlgumNomeParaContainer nginx
   containers diretamente pelo nome, sem ter que usar o ID
 
 
+docker container run --name container1 -d --network host -p 8080:80 nginx:alpine
+  Atribui a rede "host" para o container  
+  Já que é uma rede host, o host e o container precisam ter
+  portas distintas (80:80 não funcioanaria)
+  Novos containers também não podem ocupar nem a porta 8080 e nem 80
+  depois dessa instância
+
 
 
 
@@ -70,6 +77,10 @@ docker container ls -a
 
 docker container ls -a -q
   Retorna "apenas o ID" de todos os containers
+
+
+docker network ls
+  Retorna as redes que você possui
 
 
 
