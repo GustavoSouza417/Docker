@@ -109,6 +109,7 @@ docker network rm <ID da Rede || Nome da Rede>
 
 docker network prune
   Apaga todas as redes que não estão em modo de execução
+  Não apaga as redes padrão (bridge, host e none)
 
 
 
@@ -157,7 +158,15 @@ docker container stats <ID do Container || Nome do Container>
 
 docker network create <Nome da Rede>
   Cria uma rede customizada. Por padrão, ela vem configurada
-  como bridge
+  com o driver bridge, pois os drivers null e host só podem
+  ter uma única instância, que já vem instânciadas por padrão
+  no Docker
+
+
+docker network create <Nome da Rede> -d bridge
+  Se você quiser deixar o driver explícito, pode fazer isso,
+  mas por padrão, ele sempre cria com bridge e não é possível
+  criar com os tipos host ou null.
 
 
 docker network create <Nome da Rede> --subnet <Subnet (exemplo: 192.150.10.0/24)>
