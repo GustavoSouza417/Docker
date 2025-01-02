@@ -1,2 +1,2 @@
 # Docker
-Repositório que contém os meus estudos sobre Docker
+Repositório que contém meus estudos sobre Docker.
