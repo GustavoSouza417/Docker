@@ -176,3 +176,8 @@ docker network create <Nome da Rede> --subnet <Subnet (exemplo: 192.150.10.0/24)
 docker network create <Nome da Rede) --subnet <Subnet> --gateway <IP do gateway>
   Cria uma rede customizada em determinado range de IP e define
   o IP do gateway dela
+
+
+docker container exec -it <Nome do Container> ping <endereço IP || DNS>
+  Pinga em algum endereço
+  É possível fazer isso tanto pelo IP quanto pelo nome do container (DNS)
