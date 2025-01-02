@@ -1,12 +1,12 @@
 Docker:
-  É uma plataforma para a criação e gestão de containers.
+  É uma plataforma para a criação e gestão de contêiners
 
 
 
 
 
 
-Container:
+Contêiner:
   São unidades de software virtualizadas/isoladas que
   empacotam uma aplicação e todas as dependências
   necessárias para que essa aplicação funcione
@@ -17,17 +17,17 @@ Container:
   e performáticos que VMs, mas garantem menos isolação
 
   Já que utilizam o kernel do SO para funcionarem, isso
-  também significa que um container criado em um SO Windows
+  também significa que um contêiner criado em um SO Windows
   não funcionará em um SO Linux e vice-versa
 
-  Contudo, é possível que containers Linux funcionem em
+  Contudo, é possível que contêiners Linux funcionem em
   qualquer plataforma, contanto que você utilize ferramentas
   como o WSL. Outra alternativa, no caso de Linux para Windows,
-  é utilizar o Hyper-V para executar o container
+  é utilizar o Hyper-V para executar o contêiner
 
   Também compartilham recursos de memória, CPU e afins
   com o SO, e a quantidade de recursos limite a serem
-  utilizados por um container pode ser configurada
+  utilizados por um contêiner pode ser configurada
 
 
 
@@ -35,27 +35,27 @@ Container:
 
 
 Vantagens do Uso de Containers:
-  Alta portabilidade, pois um container pode funcionar
+  Alta portabilidade, pois um contêiner pode funcionar
   em qualquer lugar e qualquer ambiente, contanto que ele seja 
   compatível com o kernel do sistema e que haja recursos computacionais
   suficientes para executá-lo. Isso ocorre porque ele empacota
   a aplicação com tudo que é necessário para executá-la, e
-  também porque devido ao isolamento, o container não conflita
-  com a maior parte de coisas que poderiam invalidar o container
+  também porque devido ao isolamento, o contêiner não conflita
+  com a maior parte de coisas que poderiam invalidar o contêiner
 
-  Isolamento, o que permite executar vários containers do mesmo
+  Isolamento, o que permite executar vários contêiners do mesmo
   software com as mesmas dependências em diferentes versões, sem
   que conflitem
 
   Leveza e eficiência, pois não necessitam de uma instância de máquina
   inteira, mas sim apenas da instância de um pacote de aplicação
 
-  Escabalidade, pois o container pode escalar de acordo com
+  Escabalidade, pois o contêiner pode escalar de acordo com
   as necessidades
 
   Auxilia a "unificação" de ambientes de desenvolvimento, de forma que
   seja possível simular o ambiente de produção no ambiente de
-  desenvolvimento, de modo que o mesmo container que está funcionando
+  desenvolvimento, de modo que o mesmo contêiner que está funcionando
   no ambiente de desenvolvimento funcione exatamente igual no ambiente
   de produção, eliminando possíveis erros devido a diferenças entre
   ambientes
@@ -66,13 +66,13 @@ Vantagens do Uso de Containers:
 
 
 Desvantagens do Uso de Containers:
-  Containers adicionam complexidade
+  Contêiners adicionam complexidade
 
-  Apesar de não fornecer um overhead igual o de uma VM, containers
+  Apesar de não fornecer um overhead igual o de uma VM, contêiners
   também causam overhead e diminuem o desempenho de tarefas
 
-  Se um container possui falhas de segurança, já que todos compartilham
-  do mesmo kernel, todos os containers estarão sujeitos a essa falha
+  Se um contêiner possui falhas de segurança, já que todos compartilham
+  do mesmo kernel, todos os contêiners estarão sujeitos a essa falha
   de segurança
 
 
@@ -81,7 +81,7 @@ Desvantagens do Uso de Containers:
 
 
 Imagem:
-  É o modelo para a criação de um container
+  É o modelo para a criação de um contêiner
 
   É criado em um arquivo chamado de Dockerfile, que é um arquivo
   de texto que define como se constrói imagens Docker
@@ -92,7 +92,7 @@ Imagem:
   Após criar um Dockerfile, você deve fazer um build nele para
   que ele gere uma imagem a partir do Dockerfile
   
-  Após gerar a imagem, você já pode utilizá-la para criar containers  
+  Após gerar a imagem, você já pode utilizá-la para criar contêiners  
 
   Você pode criar suas próprias imagens ou baixar imagens
   prontas no Docker Hub
@@ -119,11 +119,11 @@ Docker Hub:
 
 
 Docker Engine:
-  É o mecanismo que permite a execução de containers, o qual é
+  É o mecanismo que permite a execução de contêiners, o qual é
   dividido em duas partes, chamadas de Docker Daemon e Docker CLI
 
   O Docker Daemon é um processo em segundo plano que gerencia
-  containers, imagens e afins
+  contêiners, imagens e afins
 
   O Docker CLI é a interface de comando na qual ocorre a interação
   com o Docker
@@ -133,12 +133,7 @@ Docker Engine:
 
 
 
-
-
-
-
-
-
-
-
-
+Docker Compose:
+  Ferramenta do Docker que permite definir e gerenciar ambientes
+  de múltiplos contêiners a partir de um arquivo de configuração
+  YAML.
