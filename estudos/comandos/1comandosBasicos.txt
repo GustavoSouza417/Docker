@@ -214,3 +214,18 @@ docker image pull <Nome do Autor>/<Nome da Imagem>:<Tag>
   Para imagens oficiais, não é necessário colocar o nome do autor
   Após o nome da imagem, se quiser, você pode atribuir a Tag,
   que define a versão ou afins da imagem
+
+
+docker image commit <ID do Contêiner || Nome do Contêiner>
+  Cria uma imagem a partir de um contêiner
+
+
+docker image history <ID da Imagem || Nome da Imagem>
+  Exibe todas as últimas camadas (commits/atualizações) na imagem
+  É uma alternativa ao Dockerfile
+  É uma forma mais simples de se criar imagens, mas não tão recomendada,
+  pois não é automatizada, não permite um bom versionamento e não possui
+  um bom sistema de commits, pois para que cada ação tenha um commit,
+  você precisa dar um build na imagem a cada alteração
+  Também é melhor "documentado", já que ele por si só explica como
+  a imagem foi criada
