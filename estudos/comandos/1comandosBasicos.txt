@@ -5,7 +5,7 @@ docker version
 
 
 docker info
-  Retorna quantos containers você tem e informações sobre eles,
+  Retorna quantos contêiners você tem e informações sobre eles,
   como também informações sobre suas imagens, plugins e afins
 
 
@@ -21,7 +21,7 @@ docker --help
 
 docker container run -p 8080:80 nginx
   Roda o container docker "nginx"
-  O comando "run" serve para criar containers e iniciá-los após sua criação
+  O comando "run" serve para criar contêiners e iniciá-los após sua criação
   O host acessará o serviço por sua porta 8080 (poderia ser qualquer outra porta vazia)
   O nginx executará na porta 80 por padrão, então ali deve ser 80
   No caso, a porta 8080 do host está sendo mapeada para a porta 80 do nginx
@@ -31,23 +31,23 @@ docker container run -p 8080:80 nginx
 
 
 docker container run -d -p 8080:80 nginx
-  Roda o container docker "nginx" na porta 8080 em segundo plano
+  Roda o contêiner docker "nginx" na porta 8080 em segundo plano
 
 
 docker container run -P nginx
-  Roda o container docker "nginx" numa porta randômica
+  Roda o contêiner docker "nginx" numa porta randômica
 
 
 docker container run -d -p 80:80 --name AlgumNomeParaContainer nginx
-  Você pode dar nomes a containers e, assim, consegue selecionar
-  containers diretamente pelo nome, sem ter que usar o ID
+  Você pode dar nomes a contêiners e, assim, consegue selecionar
+  contêiners diretamente pelo nome, sem ter que usar o ID
 
 
 docker container run --name container1 -d --network host -p 8080:80 nginx:alpine
-  Atribui a rede "host" para o container  
-  Já que é uma rede host, o host e o container precisam ter
+  Atribui a rede "host" para o contêiner  
+  Já que é uma rede host, o host e o contêiner precisam ter
   portas distintas (80:80 não funcioanaria)
-  Novos containers também não podem ocupar nem a porta 8080 e nem 80
+  Novos contêiners também não podem ocupar nem a porta 8080 e nem 80
   depois dessa instância
 
 
@@ -63,11 +63,11 @@ docker container run (...)
   Se você não tiver a imagem, ele a baixa automaticamente
 
 
-docker container start <ID do Container || Nome do Container>
-  Executa um container que já foi criado e não está executando
+docker container start <ID do Contêiner || Nome do Contêiner>
+  Executa um contêiner que já foi criado e não está executando
 
 
-docker container stop <ID do Container || Nome do Container>
+docker container stop <ID do Contêiner || Nome do Contêiner>
   Para a execução do container
   Demora alguns segundos, mas salva tudo do contêiner, sem que
   dados sejam perdidos
@@ -87,19 +87,25 @@ docker container unpause <ID do Contêiner || Nome do Contêiner>
   volte a executar no mesmo estado em que estava
 
 
+docker container restart <ID do Contêiner || Nome do Contêiner>
+  Reinicia um contêiner
+
+
+
+
 
 
 docker container ls
-  Lista todos os containers que estão em funcionamento
+  Lista todos os contêiners que estão em funcionamento
 
 
 docker container ls -a
-  Lista todos os containers, tanto os em funcionamento
+  Lista todos os contêiners, tanto os em funcionamento
   quanto os que estão parados
 
 
 docker container ls -a -q
-  Retorna "apenas o ID" de todos os containers
+  Retorna "apenas o ID" de todos os contêiners
 
 
 docker network ls
@@ -111,18 +117,18 @@ docker network ls
 
 
 docker container rm <ID do Container || Nome do Container>
-  Exclui um container que não está em execução
-  Para excluir containers em execução, é preciso pará-los primeiro
-  Você pode excluir vários containers de uma vez passando-os
+  Exclui um contêiner que não está em execução
+  Para excluir contêiners em execução, é preciso pará-los primeiro
+  Você pode excluir vários contêiners de uma vez passando-os
   em sequência
 
 
 docker container rm -f <ID do Container || Nome do Container>
-  Força a remoção de um container, mesmo que esteja em execução
+  Força a remoção de um contêiner, mesmo que esteja em execução
 
 
 docker container rm -f $(docker container ls -a -q)
-  Exclui todos os containers de uma vez só, tanto os que estão
+  Exclui todos os contêiners de uma vez só, tanto os que estão
   em funcionamento quanto os que estão parados
 
 
@@ -139,13 +145,13 @@ docker network prune
 
 
 
-docker container logs <ID do Container || Nome do Container>
+docker container logs <ID do Contêiner || Nome do Contêiner>
   Exibe as mensagens de log de determinado container
-  Se você nunca acessou o container, ele não retornará logs
+  Se você nunca acessou o contêiner, ele não retornará logs
 
 
-docker container top <ID do Container || Nome do Container>
-  Mostra quais processos (PID) o container está executando
+docker container top <ID do Contêiner || Nome do Contêiner>
+  Mostra quais processos (PID) o contêiner está executando
   no sistema operativo
 
 
@@ -153,9 +159,9 @@ docker container top <ID do Container || Nome do Container>
 
 
 
-docker container inspect <ID do Container || Nome do Container>
+docker container inspect <ID do Contêiner || Nome do Contêiner>
   Retorna informações detalhadas sobre quais redes estão sendo
-  utilizadas por determinado container
+  utilizadas por determinado contêiner
 
 docker network inspect <ID da Rede || Nome da Rede>
   Retorna informações detalhadas sobre uma determinada rede
@@ -167,11 +173,11 @@ docker network inspect <ID da Rede || Nome da Rede>
 
 docker container stats
   Exibe como está o uso de recursos do computador em relação
-  a todos os containers
+  a todos os contêiners
 
 
-docker container stats <ID do Container || Nome do Container>
-  Exibe o uso de recursos do computador em relação ao container
+docker container stats <ID do Contêiner || Nome do Contêiner>
+  Exibe o uso de recursos do computador em relação ao contêiner
   passado como argumento
 
 
