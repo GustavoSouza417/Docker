@@ -1,6 +1,12 @@
 # isso é um comentário
 
 
+# não estranhe a falta de extensão no arquivo. É comum que Dockerfiles não tenham extensão
+# Dockerfile é a melhor maneira de se criar imagens de contêiners
+# pois ele em si é uma documentação de como a imagem foi criada
+# e ele também permite a automatização da criação de imagens 
+
+
 # este comando serve para você dizer qual será a imagem base do projeto
 # você pode adicionar a TAG :latest para alocar versões, mas isso não é recomendável
 # pois caso haja alguma alteração numa versão futura, o projeto pode parar de funcionar
