@@ -15,12 +15,7 @@ RUN apt-get update && \
     apt-get install -y \
     python3.11 \
     python3.11-dev \
-    python3-pip \
-    build-essential \
-    libssl-dev \
-    libffi-dev \
-    python3-venv \
-    && apt-get clean
+    python3-pip
 
 
 # faz verificações para verificar se tudo foi instalado corretamente (apenas para depuração)
@@ -52,6 +47,18 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 EXPOSE 8000
 
 
+# abaixo, há apenas algumas variáveis de ambiente que a aplicação utiliza
+# isso não é tão importante. É algo mais específico dessa aplicação
+# observação: esse ="" tem que ficar colado nas variáveis de ambiente, mesmo. Não separe
+ENV LOGOMARCA="../public/linkedin.png"
+ENV FOTO="../public/fotoPerfil.png"
+ENV NOME="I-Juca-Pirama"
+ENV IDADE="30"
+ENV EMAIL="juca@gmail.com"
+ENV PROFISSAO="Escritor"
+ENV SITE="www.linkedin.com"
+
+
 # este comando define o que será executado toda vez que contêiners gerados por essa imagem
 # forem executados. Observação: esse comando só é executado na inicialização do contêiner.
 # Ele não é executado durante a criação da imagem. Aliás, existem outras formas de fazer
@@ -66,6 +73,7 @@ CMD [ "python3", "app.py" ]
 # mas nada te impede de passar outro diretório
 # por fim, o nome deve ser lowercase, senão não funciona
 # docker image build -t <nome-imagem>:<nome-tag> .
+
 
 # sugestão de como criar o container
 #                           (container)                              (image name)
