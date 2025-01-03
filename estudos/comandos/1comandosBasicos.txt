@@ -51,17 +51,40 @@ docker container run --name container1 -d --network host -p 8080:80 nginx:alpine
   depois dessa instância
 
 
+docker container rename <Nome Atual> <Novo Nome>
+  Renomeia um contêiner
 
+
+
+
+
+docker container run (...)
+  Executa e cria um contêiner a partir de uma imagem
+  Se você não tiver a imagem, ele a baixa automaticamente
+
+
+docker container start <ID do Container || Nome do Container>
+  Executa um container que já foi criado e não está executando
 
 
 docker container stop <ID do Container || Nome do Container>
   Para a execução do container
+  Demora alguns segundos, mas salva tudo do contêiner, sem que
+  dados sejam perdidos
 
 
-docker container start <ID do Container || Nome do Container>
-  Executa um container que já foi criado e está parado
+docker container kill <ID do Contêiner || Nome do Contêiner>
+  Diferente do stop, para o contêiner imediatamente,
+  mas perde todos os dados
 
 
+docker container pause <ID do Contêiner || Nome do Contêiner>
+  Pausa o contêiner, mantendo seu estado atual congelado
+
+
+docker container unpause <ID do Contêiner || Nome do Contêiner>
+  Despausa o contêiner pausado (pause), de forma que ele
+  volte a executar no mesmo estado em que estava
 
 
 
@@ -181,3 +204,13 @@ docker network create <Nome da Rede) --subnet <Subnet> --gateway <IP do gateway>
 docker container exec -it <Nome do Container> ping <endereço IP || DNS>
   Pinga em algum endereço
   É possível fazer isso tanto pelo IP quanto pelo nome do container (DNS)
+
+
+
+
+
+
+docker image pull <Nome do Autor>/<Nome da Imagem>:<Tag>
+  Para imagens oficiais, não é necessário colocar o nome do autor
+  Após o nome da imagem, se quiser, você pode atribuir a Tag,
+  que define a versão ou afins da imagem
