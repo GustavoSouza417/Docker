@@ -235,3 +235,5 @@ docker image history <ID da Imagem || Nome da Imagem>
   você precisa dar um build na imagem a cada alteração
   Também é melhor "documentado", já que ele por si só explica como
   a imagem foi criada
+
+docker login
