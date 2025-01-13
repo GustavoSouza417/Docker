@@ -236,4 +236,31 @@ docker image history <ID da Imagem || Nome da Imagem>
   Também é melhor "documentado", já que ele por si só explica como
   a imagem foi criada
 
+
 docker login
+  Credencia o usuário no Docker Hub
+  Se você estiver logado no Docker Desktop, ele te loga automaticamente
+  após a execução desse comando. Caso contrário, será necessário adicionar
+  sua senha e fazer a confirmação de um código enviado para seu dispositivo
+
+
+docker logout
+  Desabilita o credenciamento do usuário
+
+
+docker image push nome-do-usuario/nome-da-imagem:tag
+  Faz o push de uma imagem para o Docker Hub
+  A imagem precisa ser nomeada no formato nome-do-usuario/nome-da-imagem:tag
+  O usuário precisa estar logado
+
+
+
+
+
+
+docker-compose up
+  Cria um contêiner de acordo com o Dockerfile do diretório corrente
+
+
+docker-compose up -d
+  Cria e roda o contêiner em segundo plano
